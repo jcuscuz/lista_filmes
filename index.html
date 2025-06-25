@@ -1,0 +1,493 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Filmes por Emoções – Divertidamente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+      padding: 20px 0 60px;
+    }
+    header#topo {
+      background-color: #1f1f1f;
+      color: #ffce54;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 2.2em;
+      font-weight: bold;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      font-family: 'Metamorphous', cursive;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    }
+    .accordion-btn {
+      font-family: 'Metamorphous', cursive;
+      font-size: 1.7em;
+      width: 100%;
+      text-align: left;
+      padding: 18px 25px;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .accordion-btn:hover {
+      filter: brightness(1.15);
+    }
+    .accordion-btn.active {
+      filter: brightness(1.3);
+    }
+
+    .accordion-content {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-content.open {
+      max-height: 2000px;
+    }
+
+    .accordion-content img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 8px;
+      flex-shrink: 0;
+      margin-bottom: 10px;
+    }
+
+    .accordion-content .movie {
+      flex: 1 1 300px;
+    }
+
+    @media (max-width: 768px) {
+      .accordion-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .accordion-content img {
+        max-width: 100%;
+      }
+    }
+
+    .movie {
+      padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .movie:first-child {
+      border-top: none;
+    }
+    .movie strong {
+      display: block;
+      font-size: 1.3em;
+      margin-bottom: 5px;
+      color: #ffce54;
+      font-family: 'Metamorphous', cursive;
+    }
+
+    .alegria .accordion-btn { background-color: #ffff00; color: #121212; }
+    .tristeza .accordion-btn { background-color: #347dfd; color: #121212; }
+    .raiva .accordion-btn { background-color: #d83820; color: #121212; }
+    .medo .accordion-btn { background-color: #b873f1; color: #121212; }
+    .nojinho .accordion-btn { background-color: #2c8a2c; color: #121212; }
+    .ansiedade .accordion-btn { background-color: #ff920c; color: #121212; }
+    .tédio .accordion-btn { background-color: #6010d0; color: #121212; }
+    .inveja .accordion-btn { background-color: #51c49e; color: #121212; }
+    .vergonha .accordion-btn { background-color: #ff2fcb; color: #121212; }
+    .nostalgia .accordion-btn { background-color: #ff69b4; color: #121212; }
+
+    @media (max-width: 600px) {
+      header#topo {
+        font-size: 1.7em;
+      }
+      .accordion-btn {
+        font-size: 1.4em;
+        padding: 15px 20px;
+      }
+      .movie strong {
+        font-size: 1.15em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="topo">Filmes por Emoções – Divertidamente</header>
+  <div class="container">
+    <section class="alegria">
+      <button class="accordion-btn">Alegria</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="ALEGRIA.png" alt=""></div>
+        <div class="movie"><strong>Esposa de Mentirinha</strong>
+          <p>Infeliz em sua tentativa de casamento, Danny passa a 
+                    vivenciar relacionamentos sem compromisso para driblar a carência. 
+                    Assim, ele toca sua vida como cirurgião plástico bem-sucedido, 
+                    tendo sua melhor amiga Katherine, mãe solteira de um casal, 
+                    como fiel escudeira. Quando conhece a jovem Palmer e a paixão toma 
+                    conta de ambos, ele inventa, para tentar conquistá-la, que é marido de Katherine, 
+                    pai das crianças e que vai se separar.</p></div>
+        <div class="movie"><strong>Minha Mãe é uma Peça</strong>
+          <p>Dona Hermínia é uma senhora de meia-idade, divorciada do marido, 
+                    que a trocou por uma mulher mais jovem. Hiperativa, ela não larga do pé de seus filhos, 
+                    Marcelina e Juliano. Um dia, após descobrir que eles a consideram chata, 
+                    ela resolve sair de casa sem avisar ninguém, deixando todos preocupados. 
+                    Dona Hermínia decide visitar a querida tia Zélia para desabafar suas tristezas atuais 
+                    e recordar os bons tempos do passado.</p></div>
+        <div class="movie"><strong>Auto da Compadecida</strong>
+          <p>As aventuras dos nordestinos João Grilo, um sertanejo pobre e mentiroso, e Chicó,
+                     o mais covarde dos homens. A dupla luta para sobreviver aplicando golpes no pequeno 
+                     vilarejo de Taperoá, no sertão da Paraíba - nem o temido cangaceiro Severino de Aracaju 
+                     escapa das artimanhas de João Grilo e Chicó. A dupla tem a chance de se redimir com a 
+                     aparição de Nossa Senhora.</p></div>
+        <div class="movie"><strong>Jojo Rabbit</strong>
+          <p>Jojo é um garoto alemão solitário que descobre que sua mãe está escondendo uma garota 
+                    judia no sótão. Ajudado apenas por seu amigo imaginário, Adolf Hitler, Jojo deve enfrentar 
+                    seu nacionalismo cego enquanto a Segunda Guerra Mundial prossegue.</p></div>
+        <div class="movie"><strong>Saneamento Básico</strong>
+          <p>Uma pequena comunidade de descendentes de imigrantes italianos do interior do estado do 
+                    Rio Grande do Sul recorre a um vídeo caseiro para tentar resolver os problemas básicos de 
+                    saneamento que afetam seu povo.</p></div>
+        <div class="movie"><strong>Brooklyn Nine-Nine</strong>
+          <p>Jake Peralta é um detetive brilhante e ao mesmo tempo imaturo, que nunca precisou se 
+                    preocupar em respeitar as regras. Tudo muda quando um capitão exigente assume o comando de 
+                    seu esquadrão e Jake deve aprender a trabalhar em equipe.</p></div>
+        <div class="movie"><strong>The Good Place</strong>
+          <p>A egocêntrica Eleanor morre e é enviada ao lado bom do Além por engano. Para continuar lá,
+                    ela se esforça para se tornar uma pessoa melhor</p></div>
+      </div>
+    </section>
+    <section class="tristeza">
+      <button class="accordion-btn"> Tristeza</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="TRISTEZA.png" alt=""></div>
+        <div class="movie"><strong>À Espera de um Milagre</strong>
+          <p>Um carcereiro tem um relacionamento incomum e comovente com um preso que está no 
+                    corredor na morte: Coffey, um negro enorme, condenado por ter matado brutalmente duas 
+                    gêmeas de nove anos. Ele tem tamanho e força para matar qualquer um, mas seu comportamento
+                    é completamente oposto à sua aparência. Além de ser simples, ingênuo e ter pavor do escuro, 
+                    ele possui um dom sobrenatural. Com o passar do tempo, o carcereiro aprende que, às vezes, 
+                    os milagres acontecem nos lugares mais inesperados.</p></div>
+        <div class="movie"><strong>O Quarto de Jack</strong>
+          <p>Joy e seu filho Jack vivem isolados em um quarto. O único contato que ambos têm com o 
+                    mundo exterior é a visita periódica do Velho Nick, o homem que os mantém em cativeiro. 
+                    Joy faz o possível para tornar suportável a vida no local. Quando seu filho completa cinco anos, 
+                    ela decide elaborar um plano de fuga. Com a ajuda de Jack, ela tenta enganar Nick para retornar 
+                    à realidade e apresentar um novo mundo a seu filho.</p></div>
+        <div class="movie"><strong>Diário de uma Paixão</strong>
+          <p>Na década de 1940, na Carolina do Sul, o operário Noah Calhoun e a rica Allie se apaixonam 
+                    desesperadamente, mas os pais da jovem não aprovam o namoro. Noah é enviado para lutar na 
+                    Segunda Guerra Mundial, e parece ser o fim do romance. Enquanto isso, Allie se envolve com outro homem. 
+                    No entanto, a paixão deles ainda não acabou quando Noah retorna para a pequena cidade anos mais tarde, 
+                    próximo ao casamento de Allie.</p></div>
+        <div class="movie"><strong>Como Eu Era Antes de Você</strong>
+          <p>De origem modesta e sem grandes aspirações, a peculiar Louisa Clark é contratada para ser cuidadora 
+                    de Will, um jovem tetraplégico depressivo e cínico</p></div>
+        <div class="movie"><strong>O Túmulo dos Vagalumes</strong>
+          <p>Os irmão Setsuko e Seita vivem no Japão em meio a Segunda Guerra Mundial. Após a morte da 
+                    mãe em um bombardeio e a convocação do pai para a Guerra, eles vão morar com alguns parentes. 
+                    Insatisfeitos, saem da cidade e acabam em um abrigo na floresta.</p></div>
+        <div class="movie"><strong>This is Us</strong>
+          <p>A história da família Pearson começa em 1979, no dia que os trigêmeos Jack, Kate e Randall 
+                    chegam em casa da maternidade. Revelações sobre os pais Jack e Rebecca surgem nos momentos de amor, 
+                    mas também de dor, e moldam para sempre a vida de todos.</p></div>
+        <div class="movie"><strong>After Life</strong>
+          <p>Após a morte da esposa, Tony se transforma em um cara insuportável e espanta quem tenta lhe ajudar.</p></div>
+      </div>
+    </section>
+    <section class="raiva">
+      <button class="accordion-btn"> Raiva</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="RAIVA.png" alt=""></div>
+        <div class="movie"><strong>12 Anos de Escravidão</strong>
+          <p>Em 1841, Solomon Northup é um negro livre, que vive em paz ao lado da esposa e filhos. 
+                    Um dia, após aceitar um trabalho que o leva a outra cidade, ele é sequestrado e acorrentado. 
+                    Vendido como se fosse um escravo, Solomon precisa superar humilhações físicas e emocionais para sobreviver. 
+                    Ao longo de 12 anos, ele passa por dois senhores, Ford e Edwin Epps, que exploram seus serviços.</p></div>
+        <div class="movie"><strong>Cisne Negro</strong>
+          <p>Uma bailarina perde a compreensão da realidade quando uma sensual bailarina ameaça sua posição de 
+                    dançarina protagonista em "O Lago dos Cisnes".</p></div>
+        <div class="movie"><strong>A Cor Púrpura</strong>
+          <p>Este conto épico abrange 40 anos na vida de Celie, uma mulher afro-americana que mora no Sul e que 
+                    sobreviveu abuso e intolerância de seu pai. Depois que seu pai a casa com o degradante Sr. Albert Johnson, 
+                    as coisas vão de mal a pior. Celie procura encontrar companhia em qualquer lugar que pode. Perseverante, 
+                    ela mantém o sonho de um dia reencontrar sua irmã na África.</p></div>
+        <div class="movie"><strong>O Nevoeiro</strong>
+          <p>Depois que uma forte tempestade causa danos em sua casa, David Drayton e seu filho vão até a cidade 
+                    para conseguir alimentos e suprimentos. Logo depois, uma névoa espessa se forma e envolve toda a cidadezinha, 
+                    deixando os Draytons e outras pessoas presas na mercearia. O terror aumenta quando criaturas monstruosas aparecem 
+                    do lado de fora. Dentro da mercearia, a tensão cresce no momento em que uma fanática religiosa exige um sacrifício.</p></div>
+        <div class="movie"><strong>John Wick: De Volta ao Jogo</strong>
+          <p>John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. 
+                    Quando um gângster invade sua casa, mata seu cachorro e rouba seu carro, ele é forçado a voltar à ativa e inicia sua vingança.</p></div>
+        <div class="movie"><strong>Black Mirror</strong>
+          <p>Contos de ficção científica que refletem o lado negro das telas e da tecnologia, mostrando que nem toda novidade 
+                    traz só benefícios.</p></div>
+        <div class="movie"><strong>Game of Thrones</strong>
+          <p>Sucesso entre os livros mais vendidos, a série de obras "A Song of Ice and Fire", de George R.R. Martin, 
+                    é levada à tela quando HBO decide navegar a fundo pelo gênero e recriar a fantasia medieval épica. Este é o retrato de duas 
+                    famílias poderosas - reis e rainhas, cavaleiros e renegados, homens honestos e mentirosos - disputando um jogo mortal pelo 
+                    controle dos Sete Reinos de Westeros para assumir o Trono de Ferro. A série foi filmada em Malta e no norte da Irlanda, tendo 
+                    participação do escritor dos livros.</p></div>
+      </div>
+    </section>
+    <section class="medo">
+      <button class="accordion-btn"> Medo</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="MEDO.png" alt=""></div>
+        <div class="movie"><strong>Hereditário</strong>
+          <p>Após a morte da reclusa avó, a família Graham começa a desvendar algumas coisas. Mesmo após a partida da matriarca, 
+                    ela permanece como se fosse uma sombra sobre a família, especialmente sobre a solitária neta adolescente, Charlie, 
+                    por quem ela sempre manteve uma fascinação não usual. Com um crescente terror tomando conta da casa, a família explora 
+                    lugares mais escuros para escapar do infeliz destino que herdaram.</p></div>
+        <div class="movie"><strong>Invocação do Mal</strong>
+          <p>Os investigadores paranormais Ed e Lorraine Warren trabalham para ajudar a família aterrorizada por uma entidade 
+                    demoníaca em sua fazenda.</p></div>
+        <div class="movie"><strong>Nós</strong>
+          <p>Adelaide e Gabe levam a família para passar um fim de semana na praia e descansar. Eles começam a aproveitar o ensolarado local, 
+                    mas a chegada de um grupo misterioso muda tudo e a família se torna refém de seres com aparências iguais às suas.</p></div>
+        <div class="movie"><strong>O Grito</strong>
+          <p>Uma enfermeira americana que mora e trabalha em Tóquio é exposta a uma maldição misteriosa em que um espírito se apodera da pessoa, 
+                    desencadeando um violento surto de raiva, antes de clamar sua vida e passar à próxima vítima.</p></div>
+        <div class="movie"><strong>Annabelle</strong>
+          <p>John Form acha que encontrou o presente ideal para sua esposa grávida, uma boneca vintage. No entanto, a alegria do casal não dura muito. 
+                    Uma noite terrível, membros de uma seita satânica invadem a casa do casal em um ataque violento. Ao tentarem invocar um demônio, eles mancham 
+                    a boneca de sangue, tornando-a receptora de uma entidade do mal.</p></div>
+        <div class="movie"><strong>A Maldição da Residência Hill</strong>
+          <p>Entre o passado e o presente, uma família abalada confronta memórias assustadoras de seu antigo lar e dos eventos aterrorizantes que 
+                    os expulsaram de lá.</p></div>
+        <div class="movie"><strong>O Clube da Meia-noite</strong>
+          <p>Em uma clínica para adolescentes em estado terminal, integrantes de um clube secreto fazem um pacto sinistro: quem morrer primeiro 
+                    terá que mandar um sinal do além.</p></div>
+      </div>
+    </section>
+    <section class="nojinho">
+      <button class="accordion-btn"> Nojinho</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="NOJINHO.png" alt=""></div>
+        <div class="movie"><strong>Midsommar: O Mal Não Espera a Noite</strong>
+          <p>Após vivenciar uma tragédia pessoal, Dani vai com o namorado Christian e um grupo de amigos até a Suécia para participar de um festival local de verão. 
+                    Mas, ao invés das férias tranquilas com a qual todos sonhavam, o grupo se depara com rituais bizarros de uma adoração pagã.</p></div>
+        <div class="movie"><strong>Centopéia Humana</strong>
+          <p>Duas jovens estão em viagem quando seu carro quebra em uma floresta deserta. Elas buscam ajuda e encontram a casa de um cirurgião aposentado, 
+                    mas logo elas descobrem que ele pretende juntá-las em um só corpo para criar uma centopeia humana</p></div>
+        <div class="movie"><strong>Titane</strong>
+          <p>Uma mulher com fetiche por carros, uma placa de metal implantada na cabeça e instinto assassino embarca em uma jornada bizarra que envolve identidade, 
+                    fuga e amor incondicional.</p></div>
+        <div class="movie"><strong>Mosca</strong>
+          <p>O excêntrico cientista Seth Brundle completa seu dispositivo de teletransporte e decide testar a eficácia do experimento em si próprio. 
+                    Sem que ele perceba, uma mosca cai no aparelho durante o processo e provoca uma fusão dele com o inseto. Contudo, ele pensa que o experimento 
+                    foi um sucesso, até que começa a notar que as células da mosca estão tomando conta de seu corpo, e ele acaba se transformando em uma criatura 
+                    monstruosa.</p></div>
+        <div class="movie"><strong>Jogos Mortais</strong>
+          <p>Dois homens acordam acorrentados em um banheiro como prisioneiros de um assassino em série que leva suas vítimas a situações limítrofes em 
+                    um jogo macabro. Para sobreviver, eles terão de desvendar juntos as peças desse quebra-cabeças doentio.</p></div>
+        <div class="movie"><strong>Arquivo X</strong>
+          <p>Agentes especiais do FBI investigam casos inexplicáveis conhecidos como Arquivo X. Embora o governo esteja convencido de que os relatórios 
+                    sejam falsos, os detetives não descansam até que consigam provar a verdade.</p></div>
+        <div class="movie"><strong>Hannibal</strong>
+          <p>O drama explora o início do relacionamento do psiquiatra Hannibal Lecter com seu paciente, o talentoso analista comportamental 
+                    do FBI, Will Graham.</p></div>
+      </div>
+    </section>
+    <section class="ansiedade">
+      <button class="accordion-btn"> Ansiedade</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="ANSIEDADE.png" alt=""></div>
+        <div class="movie"><strong>Corra!</strong>
+          <p>A história acompanha um final de semana na vida de Chris (Daniel Kaluuya), um jovem afro-americano que visita a propriedade da familia de sua namorada. 
+                    A princípio, Chris vê o comportamento exageradamente hospitaleiro da família como uma tentativa desajeitada de lidar com a relação interracial da filha, 
+                    mas, no decorrer do final de semana, uma série de descobertas perturbadoras o levam a uma verdade que ele nunca poderia imaginar.</p></div>
+        <div class="movie"><strong>Ilha do Medo</strong>
+          <p>Nos anos 1950, a fuga de uma assassina leva o detetive Teddy Daniels e seu parceiro a investigarem o seu desaparecimento de um quarto trancado em um 
+                    hospital psiquiátrico. Lá, uma rebelião se inicia e o agente terá que enfrentar seus próprios medos.</p></div>
+        <div class="movie"><strong>O Sexto Sentido</strong>
+          <p>Um garoto vê o espírito de pessoas mortas à sua volta. Um dia, ele conta o segredo ao psicólogo Malcolm Crowe, que tenta ajudá-lo a descobrir 
+                    o que está por trás dos distúrbios. A pesquisa de Crowe sobre os poderes do garoto causa consequências inesperadas a ambos.</p></div>
+        <div class="movie"><strong>O Silêncio dos Inocentes</strong>
+          <p>A jovem e talentosa agente do FBI Clarice Starling recebe ajuda do encarcerado Dr. Hannibal Lecter, um psiquiatra brilhante e também um psicopata 
+                    violento e canibal, para tentar encontrar um assassino em série conhecido como Buffalo Bill.</p></div>
+        <div class="movie"><strong>O Lobo Atrás da Porta</strong>
+          <p>Uma criança é sequestrada e seus pais, Bernardo e Sylvia, decidem ir até a delegacia. O delegado resolve interrogá-los separadamente e descobre 
+                    que Bernardo tinha uma amante, Rosa, que também é levada ao local para averiguações. Os depoimentos do trio levam o delegado a descobrir 
+                    uma rede de mentiras, amor, vingança e ciúmes.</p></div>
+        <div class="movie"><strong>24 Horas</strong>
+          <p>Todos os dias, o agente antiterrorista Jack Bauer enfrenta ataques, traições e planos diabólicos em seu trabalho.</p></div>
+        <div class="movie"><strong>You</strong>
+          <p>Obsessivo e mortalmente charmoso, Joe vai ao extremo para entrar na vida de quem o fascina. Por trás de seus modos gentis, há uma fúria assassina 
+                    e um passado perturbador</p></div>
+      </div>
+    </section>
+    <section class="tédio">
+      <button class="accordion-btn"> Tédio</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="TEDIO.png" alt=""></div>
+        <div class="movie"><strong>O Poderoso Chefão</strong>
+          <p>Uma família mafiosa luta para estabelecer sua supremacia nos Estados Unidos depois da Segunda Guerra Mundial. Uma tentativa de assassinato deixa o chefão 
+                    Vito Corleone incapacitado e força os filhos Michael e Sonny a assumir os negócios.</p></div>
+        <div class="movie"><strong>2001: Uma Odisseia no Espaço</strong>
+          <p>Uma estrutura imponente preta fornece uma conexão entre o passado e o futuro nesta adaptação enigmática de um conto reverenciado de ficção científica do autor 
+                    Arthur C. Clarke. Quando o Dr. Dave Bowman e outros astronautas são enviados para uma misteriosa missão, os chips de seus computadores começam a mostrar um 
+                    comportamento estranho, levando a um tenso confronto entre homem e máquina que resulta em uma viagem alucinante no espaço e no tempo.</p></div>
+        <div class="movie"><strong>O Senhor dos Anéis: A Sociedade do Anel</strong>
+          <p>Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal. 
+                    Para isso, o hobbit Frodo tem um caminho árduo pela frente, onde encontra perigo, medo e seres bizarros. Ao seu lado para o cumprimento desta jornada, ele aos 
+                    poucos pode contar com outros hobbits, um elfo, um anão, dois humanos e um mago, totalizando nove seres que formam a Sociedade do Anel</p></div>
+        <div class="movie"><strong>O Brutalista</strong>
+          <p>Arquiteto visionário foge da Europa pós-Segunda Guerra e chega aos Estados Unidos para reconstruir sua vida, carreira e casamento. Sozinho em um novo país, 
+                    ele se estabelece na Pensilvânia, onde um rico e proeminente industrial reconhece seu talento.</p></div>
+        <div class="movie"><strong>Melancolia</strong>
+          <p>Duas irmãs, afastadas pelo tempo, têm reações completamente distintas ao saber que o mundo pode estar chegando ao fim com o planeta Melancolia se 
+                    movimentando em direção à Terra. Uma aceita calmamente a situação enquanto a outra se desespera.</p></div>
+        <div class="movie"><strong>The OA</strong>
+          <p>Sete anos depois de desaparecer misteriosamente, uma mulher que antes era cega volta para casa enxergando. Ela conta uma história fantástica sobre os anos 
+                    em que esteve longe, mas ninguém acredita nela e acham que a moça está louca.</p></div>
+        <div class="movie"><strong>Normal People</strong>
+          <p>Apesar de serem de origens completamente diferentes, Marianne e Connell, dois adolescentes irlandeses, formam uma conexão profunda enquanto entram e saem 
+                    da vida um do outro.</p></div>
+      </div>
+    </section>
+    <section class="inveja">
+      <button class="accordion-btn"> Inveja</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="INVEJA.png" alt=""></div>
+        <div class="movie"><strong>Beleza Americana</strong>
+          <p>Lester Burham passa por uma crise de meia idade, até que conhece Angela. Encantado com sua beleza, ele está disposto a dar a volta por cima.</p></div>
+        <div class="movie"><strong>Noivo Neurótico, Noiva Nervosa</strong>
+          <p>Um humorista judeu e divorciado que faz análise há quinze anos, se apaixona por Annie Hall, uma cantora em início de carreira com uma cabeça um pouco complicada.
+                    Em pouco tempo eles decidem morar juntos, mas as crises conjugais começam a aparecer e afetar os sentimentos de ambos.</p></div>
+        <div class="movie"><strong>A Rede Social</strong>
+          <p>Em uma noite de outono em 2003, Mark Zuckerberg, estudante de Harvard e gênio da computação, começa a trabalhar em um novo conceito que acaba se transformando 
+                    em uma rede social global conhecida como Facebook. Seis anos e 500 milhões de amigos mais tarde, Zuckerberg se torna o mais jovem bilionário da história com o 
+                    sucesso de sua rede social. No entanto, a sua ascensão sem precedentes traz complicações legais e pessoais.</p></div>
+        <div class="movie"><strong>Comer, Rezar, Amar</strong>
+          <p>Liz Gilbert pensa que ela tinha tudo que queria na vida: uma casa, um marido e uma carreira de sucesso. Porém recém-divorciada e de frente para um momento 
+                    de mudança, ela se sente confusa sobre o que é importante em sua vida. Ousando sair da sua zona de conforto, Liz embarca em uma busca de autodescoberta que a 
+                    leva à Itália, à Índia e a Bali.</p></div>
+        <div class="movie"><strong>O Diabo Veste Prada</strong>
+          <p>Andy é uma jovem que consegue um emprego na renomada "Runway Magazine", a mais importante revista de moda de Nova York. Ela passa a trabalhar como assistente 
+                    de Miranda Priestly, editora-chefe da revista. Apesar da chance que muitos sonhariam em conseguir, logo Andy nota que trabalhar com Miranda não é tão simples
+                    assim.</p></div>
+        <div class="movie"><strong>Gossip Girl</strong>
+          <p>O colegial acabou para os privilegiados ex-estudantes de uma escola preparatória exclusiva do Upper East Side de Manhattan, mas a "Gossip Girl" ainda compartilha 
+                    mensagens de texto sobre escândalos e corações partidos. Enquanto os formandos embarcam rumo ao futuro, com alguns entrando para a faculdade e outros se concentrando 
+                    nas carreiras em ascensão, a "Gossip Girl" continua a colocar lenha na fogueira e a alimentar qualquer escândalo em potencial. Ainda assim, sua identidade permanece
+                    um mistério. Dos produtores executivos Josh Schwartz, Stephanie Savage, Leslie Morgenstein, Bob Levy e Joshua Safran.</p></div>
+        <div class="movie"><strong>Succession</strong>
+          <p>Acompanhe a história da família Roy, composta por Logan e seus quatro filhos, que controla um dos maiores conglomerados de meios de comunicação e entretenimento 
+                    do mundo.</p></div>
+      </div>
+    </section>
+    <section class="vergonha">
+      <button class="accordion-btn"> Vergonha</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="VERGONHA.png" alt=""></div>
+        <div class="movie"><strong>Ela</strong>
+          <p>O solitário escritor Theodore desenvolve uma relação de amor especial com o novo sistema operacional do seu computador. Surpreendentemente, ele acaba se apaixonando 
+                    pela voz deste programa, uma entidade intuitiva e sensível chamada Samantha.</p></div>
+        <div class="movie"><strong>The Room</strong>
+          <p>"The Room" é um filme independente americano de 2003, dirigido e estrelado por Tommy Wiseau, que narra a história de Johnny, um banqueiro bem-sucedido em São Francisco, 
+                    cuja vida aparentemente perfeita com sua noiva Lisa desmorona quando ela decide seduzir seu melhor amigo, Mark.</p></div>
+        <div class="movie"><strong>Thor: Amor e Trovão</strong>
+          <p>Thor busca por paz, mas seus planos são interrompidos por Gorr, o Carniceiro dos Deuses, um assassino galáctico. Para combater esta ameaça, ele pede que Rei Valquíria, 
+                    Korg e Jane Foster o ajudem.</p></div>
+        <div class="movie"><strong>Esquadrão Suicida</strong>
+          <p>Um time dos mais perigosos e encarcerados supervilões são contratados por uma agência secreta do governo para combater uma poderosa entidade. No entanto, quando eles 
+                    percebem que não foram escolhidos apenas para ter sucesso, mas também por sua óbvia culpa quando inevitavelmente falharem, terão que decidir se vale a pena ou não 
+                    continuar correndo risco de morte.</p></div>
+        <div class="movie"><strong>A Barraca do Beijo</strong>
+          <p>O primeiro beijo de Elle vira um romance proibido com o garoto mais bonito do colégio, mas acaba colocando em risco a sua relação com seu melhor amigo.</p></div>
+        <div class="movie"><strong>The Office</strong>
+          <p>Falso documentário que segue o cotidiano do politicamente-incorreto gerente Michael Scott e seus funcionários na Dunder-Mifflin, uma empresa de papel 
+                    em Scranton, Pensilvânia.</p></div>
+        <div class="movie"><strong>She-Hulk</strong>
+          <p>Jennifer Walters tem uma vida complicada, pois além de advogada, solteira de 30 e poucos anos, é também um hulk superpoderoso.</p></div>
+      </div>
+    </section>
+     <section class="nostalgia">
+      <button class="accordion-btn">Nostalgia</button>
+      <div class="accordion-content">
+        <div class="img-wrapper"><img src="NOSTALGIA.png" alt=""></div>
+        <input type="text" id="itemInput" placeholder="Adicionar item..." />
+        <button class="add" onclick="addItem()">Adicionar</button>
+        <ul id="listaCompras"></ul>
+      </div>
+    </section>
+  </div>
+  </body>
+  <script>
+   const accordionBtns = document.querySelectorAll('.accordion-btn');
+  const nostalgiaSection = document.querySelector('.nostalgia');
+  const nostalgiaContent = nostalgiaSection.querySelector('.accordion-content');
+
+  accordionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        btn.classList.remove('active');
+      } else {
+        accordionBtns.forEach(b => {
+          b.classList.remove('active');
+          b.nextElementSibling.classList.remove('open');
+        });
+        content.classList.add('open');
+        btn.classList.add('active');
+
+        if (btn.parentElement.classList.contains('nostalgia')) {
+          updateNostalgiaHeight();
+        }
+      }
+    });
+  });
+
+  function updateNostalgiaHeight() {
+    nostalgiaContent.style.maxHeight = null;
+    nostalgiaContent.style.maxHeight = nostalgiaContent.scrollHeight + "px";
+  }
+
+  function addItem() {
+    const input = document.getElementById("itemInput");
+    const item = input.value.trim();
+    if (item === "") return;
+
+    const li = document.createElement("li");
+    li.innerHTML = `${item} <button class="remove" onclick="removeItem(this)">Remover</button>`;
+    document.getElementById("listaCompras").appendChild(li);
+    input.value = "";
+    updateNostalgiaHeight();
+  }
+
+  function removeItem(button) {
+    button.parentElement.remove();
+    updateNostalgiaHeight();
+  }
+  </script>
+</html>
